@@ -1,20 +1,21 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: thales
- * Date: 24/11/2018
- * Time: 23:00
+ * User: thalesmartins
+ * Date: 28/11/2018
+ * Time: 15:41
  */
 
-namespace Test\Domain\Entity;
+namespace Test\Domain\Service;
 
-
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Saci\Domain\Entity\Module;
+use Saci\Domain\Exceptions\ModuleAlreadyExists;
+use Saci\Infrastructure\Domain\Service\ModuleMaker;
 
-class ModuleTest extends TestCase
+class ModuleMakerTest extends TestCase
 {
-
     const PROJECT_NAME = 'Teste';
 
     const DS = DIRECTORY_SEPARATOR;
@@ -46,36 +47,63 @@ class ModuleTest extends TestCase
         self::ROOT . self::DS . self::PROJECT_NAME . self::DS . self::INFRASTRUCTURE_REPOSITORIES,
     ];
 
-    /** @var Module */
-    private $module;
+    /** @var MockObject */
+    private $mockModule;
 
     public function setUp()
     {
-        $this->module = new Module(self::PROJECT_NAME);
+        require_once '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'constans.php';
+
+        $this->mockModule = $this
+            ->getMockBuilder(Module::class)
+            ->disableOriginalConstructor()
+            ->getMock();
     }
 
     /**
      * @test
+     * @throws \Saci\Domain\Exceptions\ModuleAlreadyExists
      */
-    public function verifica_se_a_entidade_module_pode_ser_criada()
+    public function verifica_se_e_possivel_criar_um_modulo()
     {
 
-        $this->assertInstanceOf(Module::class, $this->module);
+        $this->mockModule
+            ->method('getPathModule')
+            ->willReturn(self::ROOT . DIRECTORY_SEPARATOR . self::PROJECT_NAME);
+
+        $this->mockModule
+            ->method('getPaths')
+            ->willReturn($this->paths);
+        /** @var Module $module */
+        $module = $this->mockModule;
+
+        (new ModuleMaker())->make($module);
+
+        foreach ($this->paths as $path) {
+            $this->assertFileExists($path);
+        }
+
     }
 
     /**
      * @test
+     * @throws \Saci\Domain\Exceptions\ModuleAlreadyExists
      */
-    public function verifica_o_nome_retornado()
+    public function lanca_excecao_caso_o_modulo_ja_exista()
     {
-        $this->assertEquals('Teste', $this->module->getName());
-    }
+        $this->expectException(ModuleAlreadyExists::class);
+        $this->expectExceptionMessage('Modulo "' . self::PROJECT_NAME . '" já existe');
+        $this->mockModule
+            ->method('getPathModule')
+            ->willReturn('console' . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR .'Storage' . DIRECTORY_SEPARATOR . self::PROJECT_NAME);
 
-    /**
-     * @test
-     */
-    public function verifica_se_path_e_um_array_com_os_diretorios_corretos()
-    {
-        $this->assertEquals($this->paths, $this->module->getPaths());
+        $this->mockModule
+            ->method('getName')
+            ->willReturn(self::PROJECT_NAME);
+        /** @var Module $module */
+        $module = $this->mockModule;
+
+        (new ModuleMaker())->make($module);
+
     }
 }

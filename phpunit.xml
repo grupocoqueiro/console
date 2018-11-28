@@ -1,0 +1,21 @@
+<phpunit bootstrap="vendor/autoload.php"
+         colors="true"
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="Testes unitários">
+            <directory suffix=".php">tests</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src/</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="tap" target="tests/coverage/report.tap"/>
+        <log type="junit" target="tests/coverage/report.junit.xml"/>
+        <log type="coverage-html" target="tests/coverage/coverage"/>
+        <log type="coverage-text" target="tests/coverage/coverage.txt"/>
+        <log type="coverage-clover" target="tests/coverage/logs/clover.xml"/>
+    </logging>
+</phpunit>

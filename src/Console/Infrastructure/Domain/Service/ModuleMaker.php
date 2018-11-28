@@ -16,11 +16,15 @@ use Symfony\Component\Filesystem\Filesystem;
 class ModuleMaker extends Filesystem implements \Saci\Domain\Services\ModuleMaker
 {
 
-
+    /**
+     * @param Module $module
+     * @throws ModuleAlreadyExists
+     */
     public function make(Module $module)
     {
+
         if ($this->exists($module->getPathModule())) {
-            throw new ModuleAlreadyExists(null, 0, null, $module->getName());
+            throw new ModuleAlreadyExists($module->getName());
         }
 
         $this->mkdir($module->getPaths());

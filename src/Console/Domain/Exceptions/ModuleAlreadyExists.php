@@ -12,14 +12,12 @@ namespace Saci\Domain\Exceptions;
 class ModuleAlreadyExists extends \Exception
 {
 
-    public function __construct(string $message = null, int $code = 0, \Exception $previous = null, string $module = null)
+    public function __construct(string $moduleName = null, int $code = 0, \Exception $previous = null)
     {
-        if (null === $message) {
-            if (null === $module) {
-                $message = 'Modulo já existe.';
-            } else {
-                $message = sprintf('Modulo "%s" já existe', $module);
-            }
+        $message = 'Modulo já existe.';
+
+        if (null ==! $moduleName) {
+            $message = sprintf('Modulo "%s" já existe', $moduleName);
         }
 
         parent::__construct($message, $code, $previous);
