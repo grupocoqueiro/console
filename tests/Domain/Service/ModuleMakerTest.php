@@ -19,7 +19,7 @@ class ModuleMakerTest extends TestCase
     const PROJECT_NAME = 'Teste';
 
     const DS = DIRECTORY_SEPARATOR;
-    const ROOT = 'src';
+    const ROOT = 'c:' . self::DS . 'temp' . self::DS .'src';
     const APPLICATION = self::DS . 'Application';
     const USE_CASE = self::APPLICATION . self::DS . 'UseCase';
     const CONTROLLERS = self::USE_CASE . self::DS . 'Controllers';
@@ -52,7 +52,6 @@ class ModuleMakerTest extends TestCase
 
     public function setUp()
     {
-        require_once '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'constans.php';
 
         $this->mockModule = $this
             ->getMockBuilder(Module::class)
@@ -74,6 +73,10 @@ class ModuleMakerTest extends TestCase
         $this->mockModule
             ->method('getPaths')
             ->willReturn($this->paths);
+
+        $this->mockModule
+            ->method('getPathModule')
+            ->willReturn(self::ROOT . self::DS . self::PROJECT_NAME);
         /** @var Module $module */
         $module = $this->mockModule;
 
@@ -81,8 +84,10 @@ class ModuleMakerTest extends TestCase
 
         foreach ($this->paths as $path) {
             $this->assertFileExists($path);
+            rmdir($path);
         }
 
+        (new ModuleMaker())->remove($module->getPathModule());
     }
 
     /**
@@ -95,7 +100,7 @@ class ModuleMakerTest extends TestCase
         $this->expectExceptionMessage('Modulo "' . self::PROJECT_NAME . '" já existe');
         $this->mockModule
             ->method('getPathModule')
-            ->willReturn('console' . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR .'Storage' . DIRECTORY_SEPARATOR . self::PROJECT_NAME);
+            ->willReturn('c:' . self::DS . 'inetpub' . self::DS . 'apps' . self::DS . 'console' . self::DS . 'tests' . self::DS .'Storage' . DIRECTORY_SEPARATOR . self::PROJECT_NAME);
 
         $this->mockModule
             ->method('getName')

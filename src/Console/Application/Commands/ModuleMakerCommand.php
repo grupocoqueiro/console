@@ -18,18 +18,27 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class ModuleMakerCommand extends Command
 {
+
     protected function configure()
     {
         $this->setName("create:module")
             ->setDescription("Cria um modulo e suas pastas iniciais")
-            ->addArgument("modulo", InputArgument::REQUIRED, "Nome do modulo");
+            ->addArgument("modulo", InputArgument::REQUIRED, "Nome do modulo")
+            ->addArgument("diretorio", InputArgument::REQUIRED, "Local onde será criado o modulo");
     }
 
+    /**
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return int|null|void
+     * @throws \Saci\Domain\Exceptions\ModuleAlreadyExists
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $modulo = $input->getArgument("modulo");
+        $diretorio = $input->getArgument("diretorio");
 
-        $module = new Module($modulo);
+        $module = new Module($modulo, $diretorio);
 
         (new ModuleMaker())->make($module);
 

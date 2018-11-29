@@ -8,7 +8,11 @@
 
 namespace Saci\Domain\Entity;
 
-
+/**
+ * Class Module
+ * @package Saci\Domain\Entity
+ * @covers \Test\Domain\Entity\ModuleTest
+ */
 class Module
 {
 
@@ -42,14 +46,20 @@ class Module
         self::MAPPING,
         self::INFRASTRUCTURE_REPOSITORIES,
     ];
+    /**
+     * @var string
+     */
+    private $diretorio;
 
-    public function __construct(string $name)
+    public function __construct(string $name, string $diretorio)
     {
         $this->name = ucfirst(strtolower($name));
+        $this->diretorio = $diretorio;
 
         foreach ($this->paths as &$path) {
-            $path = self::ROOT . self::DS . $this->name . DIRECTORY_SEPARATOR . $path;
+            $path = $this->getDiretorio() . self::DS . self::ROOT . self::DS . $this->getName() . DIRECTORY_SEPARATOR . $path;
         }
+
     }
 
     /**
@@ -69,6 +79,14 @@ class Module
 
     public function getPathModule()
     {
-        return self::ROOT . self::DS . $this->getName();
+        return $this->getDiretorio() . self::DS . self::ROOT . self::DS . $this->getName();
+    }
+
+    /**
+     * @return string
+     */
+    public function getDiretorio(): string
+    {
+        return $this->diretorio;
     }
 }

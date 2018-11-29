@@ -12,13 +12,18 @@ namespace Test\Domain\Entity;
 use PHPUnit\Framework\TestCase;
 use Saci\Domain\Entity\Module;
 
+/**
+ * Class ModuleTest
+ * @package Test\Domain\Entity
+ * @covers \Saci\Domain\Entity\Module
+ */
 class ModuleTest extends TestCase
 {
 
     const PROJECT_NAME = 'Teste';
 
     const DS = DIRECTORY_SEPARATOR;
-    const ROOT = 'src';
+    const ROOT = 'c:' . self::DS . 'temp' . self::DS .'src';
     const APPLICATION = self::DS . 'Application';
     const USE_CASE = self::APPLICATION . self::DS . 'UseCase';
     const CONTROLLERS = self::USE_CASE . self::DS . 'Controllers';
@@ -51,7 +56,7 @@ class ModuleTest extends TestCase
 
     public function setUp()
     {
-        $this->module = new Module(self::PROJECT_NAME);
+        $this->module = new Module(self::PROJECT_NAME, 'c:' . self::DS . 'temp');
     }
 
     /**
@@ -69,6 +74,22 @@ class ModuleTest extends TestCase
     public function verifica_o_nome_retornado()
     {
         $this->assertEquals('Teste', $this->module->getName());
+    }
+
+    /**
+     * @test
+     */
+    public function verifica_o_diretorio_pode_ser_retornado()
+    {
+        $this->assertEquals('c:' . self::DS . 'temp', $this->module->getDiretorio());
+    }
+
+    /**
+     * @test
+     */
+    public function verifica_o_path_do_modulo_pode_ser_retornado()
+    {
+        $this->assertEquals( self::ROOT . self::DS . self::PROJECT_NAME, $this->module->getPathModule());
     }
 
     /**
