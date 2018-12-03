@@ -13,8 +13,18 @@ use Saci\Console\Domain\Entity\Module;
 use Saci\Console\Domain\Exceptions\ModuleAlreadyExists;
 use Symfony\Component\Filesystem\Filesystem;
 
-class ModuleMaker extends Filesystem implements \Saci\Console\Domain\Services\ModuleMaker
+class ModuleMaker implements \Saci\Console\Domain\Services\ModuleMaker
 {
+
+    /**
+     * @var Filesystem
+     */
+    private $filesystem;
+
+    public function __construct(Filesystem $filesystem)
+    {
+        $this->filesystem = $filesystem;
+    }
 
     /**
      * @param Module $module
@@ -23,10 +33,10 @@ class ModuleMaker extends Filesystem implements \Saci\Console\Domain\Services\Mo
     public function make(Module $module)
     {
 
-        if ($this->exists($module->getPathModule())) {
+        if ($this->filesystem->exists($module->getPathModule())) {
             throw new ModuleAlreadyExists($module->getName());
         }
 
-        $this->mkdir($module->getPaths());
+        $this->filesystem->mkdir($module->getPaths());
     }
 }

@@ -11,6 +11,7 @@ namespace Saci\Console\Application\Commands;
 
 use Saci\Console\Domain\Entity\Module;
 use Saci\Console\Infrastructure\Domain\Services\ModuleMaker;
+use Saci\Console\Infrastructure\Domain\Services\ModuleMakerFactory;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -40,7 +41,9 @@ class ModuleMakerCommand extends Command
 
         $module = new Module($modulo, $diretorio);
 
-        (new ModuleMaker())->make($module);
+        $moduleMaker = ModuleMakerFactory::create();
+
+        $moduleMaker->make($module);
 
         $output->writeln("Modulo {$module->getName()} foi criado");
     }

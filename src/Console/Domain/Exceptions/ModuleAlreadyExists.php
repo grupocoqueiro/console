@@ -16,7 +16,7 @@ class ModuleAlreadyExists extends \Exception
     {
         $message = 'Modulo já existe.';
 
-        if (null ==! $moduleName) {
+        if (null == !$moduleName) {
             $message = sprintf('Modulo "%s" já existe', $moduleName);
         }
 

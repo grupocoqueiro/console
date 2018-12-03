@@ -17,6 +17,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Tester\CommandTester;
+use Symfony\Component\Filesystem\Filesystem;
 
 class ModuleMakerCommandTest extends TestCase
 {
@@ -62,9 +63,9 @@ class ModuleMakerCommandTest extends TestCase
             'diretorio' => 'c:' . DIRECTORY_SEPARATOR . 'temp'
         ]);
 
-        (new ModuleMaker())->remove('c:' . DIRECTORY_SEPARATOR . 'temp' . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'Teste');
+        (new Filesystem())->remove('c:' . DIRECTORY_SEPARATOR . 'temp' . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'Teste');
 
-        $this->assertEquals("Modulo Teste foi criado", str_replace("\r\n", "", $commandTester->getDisplay()));
+        $this->assertEquals("Modulo Teste foi criado", str_replace("\n", "", str_replace("\r\n", "", $commandTester->getDisplay())));
     }
 
 }

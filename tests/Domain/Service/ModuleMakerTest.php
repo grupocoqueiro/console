@@ -13,6 +13,7 @@ use PHPUnit\Framework\TestCase;
 use Saci\Console\Domain\Entity\Module;
 use Saci\Console\Domain\Exceptions\ModuleAlreadyExists;
 use Saci\Console\Infrastructure\Domain\Services\ModuleMaker;
+use Symfony\Component\Filesystem\Filesystem;
 
 class ModuleMakerTest extends TestCase
 {
@@ -80,14 +81,14 @@ class ModuleMakerTest extends TestCase
         /** @var \Saci\Console\Domain\Entity\Module $module */
         $module = $this->mockModule;
 
-        (new ModuleMaker())->make($module);
+        (new ModuleMaker(new Filesystem()))->make($module);
 
         foreach ($this->paths as $path) {
             $this->assertFileExists($path);
             rmdir($path);
         }
 
-        (new ModuleMaker())->remove($module->getPathModule());
+        (new Filesystem())->remove($module->getPathModule());
     }
 
     /**
@@ -108,7 +109,18 @@ class ModuleMakerTest extends TestCase
         /** @var Module $module */
         $module = $this->mockModule;
 
-        (new ModuleMaker())->make($module);
+        $mockFileSystem = $this->getMockBuilder(Filesystem::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
+
+         $mockFileSystem->method('exists')
+            ->willReturn(true);
+
+        /** @var Filesystem $filesystem */
+        $filesystem = $mockFileSystem;
+
+        (new ModuleMaker($filesystem))->make($module);
 
     }
 }
