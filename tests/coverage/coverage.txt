@@ -1,0 +1,18 @@
+
+
+Code Coverage Report:     
+  2018-12-03 14:06:32     
+                          
+ Summary:                 
+  Classes: 100.00% (4/4)  
+  Methods: 100.00% (9/9)  
+  Lines:   100.00% (29/29)
+
+\Saci\Console\Application\Commands::Saci\Console\Application\Commands\ModuleMakerCommand
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 11/ 11)
+\Saci\Domain\Entity::Saci\Domain\Entity\Module
+  Methods: 100.00% ( 5/ 5)   Lines: 100.00% (  9/  9)
+\Saci\Domain\Exceptions::Saci\Domain\Exceptions\ModuleAlreadyExists
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  5/  5)
+\Saci\Infrastructure\Domain\Service::Saci\Infrastructure\Domain\Service\ModuleMaker
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  4/  4)

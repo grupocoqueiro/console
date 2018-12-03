@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="C:\inetpub\apps\console\tests" tests="11" assertions="23" errors="0" failures="0" skipped="0" time="0.173103">
+    <testsuite name="Test\Application\Commands\ModuleMakerCommandTest" file="C:\inetpub\apps\console\tests\Application\Commands\ModuleMakerCommandTest.php" tests="2" assertions="6" errors="0" failures="0" skipped="0" time="0.061962">
+      <testcase name="verifica_se_a_configuracao_para_o_comando_de_criacao_d0_modulo_esta_correta" class="Test\Application\Commands\ModuleMakerCommandTest" classname="Test.Application.Commands.ModuleMakerCommandTest" file="C:\inetpub\apps\console\tests\Application\Commands\ModuleMakerCommandTest.php" line="34" assertions="5" time="0.013812"/>
+      <testcase name="verifi_se_ao_executar_um_diretorio_do_modulo_e_criado" class="Test\Application\Commands\ModuleMakerCommandTest" classname="Test.Application.Commands.ModuleMakerCommandTest" file="C:\inetpub\apps\console\tests\Application\Commands\ModuleMakerCommandTest.php" line="49" assertions="1" time="0.048150"/>
+    </testsuite>
+    <testsuite name="Test\Domain\Entity\ModuleTest" file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php" tests="5" assertions="5" errors="0" failures="0" skipped="0" time="0.016978">
+      <testcase name="verifica_se_a_entidade_module_pode_ser_criada" class="Test\Domain\Entity\ModuleTest" classname="Test.Domain.Entity.ModuleTest" file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php" line="65" assertions="1" time="0.005690"/>
+      <testcase name="verifica_o_nome_retornado" class="Test\Domain\Entity\ModuleTest" classname="Test.Domain.Entity.ModuleTest" file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php" line="74" assertions="1" time="0.001828"/>
+      <testcase name="verifica_o_diretorio_pode_ser_retornado" class="Test\Domain\Entity\ModuleTest" classname="Test.Domain.Entity.ModuleTest" file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php" line="82" assertions="1" time="0.003387"/>
+      <testcase name="verifica_o_path_do_modulo_pode_ser_retornado" class="Test\Domain\Entity\ModuleTest" classname="Test.Domain.Entity.ModuleTest" file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php" line="90" assertions="1" time="0.002341"/>
+      <testcase name="verifica_se_path_e_um_array_com_os_diretorios_corretos" class="Test\Domain\Entity\ModuleTest" classname="Test.Domain.Entity.ModuleTest" file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php" line="98" assertions="1" time="0.003732"/>
+    </testsuite>
+    <testsuite name="Test\Domain\Exeptions\ModuleAlreadyExistsTest" file="C:\inetpub\apps\console\tests\Domain\Exeptions\ModuleAlreadyExistsTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.005739">
+      <testcase name="verifica_se_a_classe_ModuleAlreadyExistsTest_pode_ser_criada" class="Test\Domain\Exeptions\ModuleAlreadyExistsTest" classname="Test.Domain.Exeptions.ModuleAlreadyExistsTest" file="C:\inetpub\apps\console\tests\Domain\Exeptions\ModuleAlreadyExistsTest.php" line="20" assertions="1" time="0.002983"/>
+      <testcase name="verifica_se_a_mensagem_pode_ser_obitida" class="Test\Domain\Exeptions\ModuleAlreadyExistsTest" classname="Test.Domain.Exeptions.ModuleAlreadyExistsTest" file="C:\inetpub\apps\console\tests\Domain\Exeptions\ModuleAlreadyExistsTest.php" line="28" assertions="1" time="0.002756"/>
+    </testsuite>
+    <testsuite name="Test\Domain\Service\ModuleMakerTest" file="C:\inetpub\apps\console\tests\Domain\Service\ModuleMakerTest.php" tests="2" assertions="10" errors="0" failures="0" skipped="0" time="0.088424">
+      <testcase name="verifica_se_e_possivel_criar_um_modulo" class="Test\Domain\Service\ModuleMakerTest" classname="Test.Domain.Service.ModuleMakerTest" file="C:\inetpub\apps\console\tests\Domain\Service\ModuleMakerTest.php" line="66" assertions="8" time="0.079225"/>
+      <testcase name="lanca_excecao_caso_o_modulo_ja_exista" class="Test\Domain\Service\ModuleMakerTest" classname="Test.Domain.Service.ModuleMakerTest" file="C:\inetpub\apps\console\tests\Domain\Service\ModuleMakerTest.php" line="97" assertions="2" time="0.009199"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
