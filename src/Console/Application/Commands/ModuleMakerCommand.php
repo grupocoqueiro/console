@@ -9,8 +9,8 @@
 namespace Saci\Console\Application\Commands;
 
 
-use Saci\Domain\Entity\Module;
-use Saci\Infrastructure\Domain\Service\ModuleMaker;
+use Saci\Console\Domain\Entity\Module;
+use Saci\Console\Infrastructure\Domain\Services\ModuleMaker;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -31,7 +31,7 @@ class ModuleMakerCommand extends Command
      * @param InputInterface $input
      * @param OutputInterface $output
      * @return int|null|void
-     * @throws \Saci\Domain\Exceptions\ModuleAlreadyExists
+     * @throws \Saci\Console\Domain\Exceptions\ModuleAlreadyExists
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {

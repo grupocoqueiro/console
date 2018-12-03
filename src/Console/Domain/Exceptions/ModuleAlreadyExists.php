@@ -6,7 +6,7 @@
  * Time: 22:46
  */
 
-namespace Saci\Domain\Exceptions;
+namespace Saci\Console\Domain\Exceptions;
 
 
 class ModuleAlreadyExists extends \Exception

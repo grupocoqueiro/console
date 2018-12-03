@@ -6,19 +6,19 @@
  * Time: 22:41
  */
 
-namespace Saci\Infrastructure\Domain\Service;
+namespace Saci\Console\Infrastructure\Domain\Services;
 
 
-use Saci\Domain\Entity\Module;
-use Saci\Domain\Exceptions\ModuleAlreadyExists;
+use Saci\Console\Domain\Entity\Module;
+use Saci\Console\Domain\Exceptions\ModuleAlreadyExists;
 use Symfony\Component\Filesystem\Filesystem;
 
-class ModuleMaker extends Filesystem implements \Saci\Domain\Services\ModuleMaker
+class ModuleMaker extends Filesystem implements \Saci\Console\Domain\Services\ModuleMaker
 {
 
     /**
      * @param Module $module
-     * @throws ModuleAlreadyExists
+     * @throws \Saci\Console\Domain\Exceptions\ModuleAlreadyExists
      */
     public function make(Module $module)
     {

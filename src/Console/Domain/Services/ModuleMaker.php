@@ -6,10 +6,10 @@
  * Time: 22:39
  */
 
-namespace Saci\Domain\Services;
+namespace Saci\Console\Domain\Services;
 
 
-use Saci\Domain\Entity\Module;
+use Saci\Console\Domain\Entity\Module;
 
 interface ModuleMaker
 {

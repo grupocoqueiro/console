@@ -10,12 +10,12 @@ namespace Test\Domain\Entity;
 
 
 use PHPUnit\Framework\TestCase;
-use Saci\Domain\Entity\Module;
+use Saci\Console\Domain\Entity\Module;
 
 /**
  * Class ModuleTest
  * @package Test\Domain\Entity
- * @covers \Saci\Domain\Entity\Module
+ * @covers \Saci\Console\Domain\Entity\Module
  */
 class ModuleTest extends TestCase
 {
@@ -51,12 +51,12 @@ class ModuleTest extends TestCase
         self::ROOT . self::DS . self::PROJECT_NAME . self::DS . self::INFRASTRUCTURE_REPOSITORIES,
     ];
 
-    /** @var Module */
+    /** @var \Saci\Console\Domain\Entity\Module */
     private $module;
 
     public function setUp()
     {
-        $this->module = new Module(self::PROJECT_NAME, 'c:' . self::DS . 'temp');
+        $this->module = new \Saci\Console\Domain\Entity\Module(self::PROJECT_NAME, 'c:' . self::DS . 'temp');
     }
 
     /**
@@ -65,7 +65,7 @@ class ModuleTest extends TestCase
     public function verifica_se_a_entidade_module_pode_ser_criada()
     {
 
-        $this->assertInstanceOf(Module::class, $this->module);
+        $this->assertInstanceOf(\Saci\Console\Domain\Entity\Module::class, $this->module);
     }
 
     /**

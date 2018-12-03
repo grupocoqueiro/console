@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1543853192">
-  <project timestamp="1543853192">
+<coverage generated="1543853654">
+  <project timestamp="1543853654">
     <package name="Saci\Console\Application\Commands">
       <file name="C:\inetpub\apps\console\src\Console\Application\Commands\ModuleMakerCommand.php">
         <class name="Saci\Console\Application\Commands\ModuleMakerCommand" namespace="Saci\Console\Application\Commands">
@@ -22,9 +22,9 @@
         <metrics loc="46" ncloc="34" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="13" coveredelements="13"/>
       </file>
     </package>
-    <package name="Saci\Domain\Entity">
+    <package name="Saci\Console\Domain\Entity">
       <file name="C:\inetpub\apps\console\src\Console\Domain\Entity\Module.php">
-        <class name="Saci\Domain\Entity\Module" namespace="Saci\Domain\Entity" fullPackage="Saci" package="Saci">
+        <class name="Saci\Console\Domain\Entity\Module" namespace="Saci\Console\Domain\Entity" fullPackage="Saci" package="Saci">
           <metrics complexity="6" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="14" coveredelements="14"/>
         </class>
         <line num="54" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="6"/>
@@ -44,9 +44,9 @@
         <metrics loc="91" ncloc="71" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="14" coveredelements="14"/>
       </file>
     </package>
-    <package name="Saci\Domain\Exceptions">
+    <package name="Saci\Console\Domain\Exceptions">
       <file name="C:\inetpub\apps\console\src\Console\Domain\Exceptions\ModuleAlreadyExists.php">
-        <class name="Saci\Domain\Exceptions\ModuleAlreadyExists" namespace="Saci\Domain\Exceptions">
+        <class name="Saci\Console\Domain\Exceptions\ModuleAlreadyExists" namespace="Saci\Console\Domain\Exceptions">
           <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
         </class>
         <line num="15" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="3"/>
@@ -58,12 +58,12 @@
         <metrics loc="24" ncloc="18" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
       </file>
     </package>
-    <file name="C:\inetpub\apps\console\src\Console\Domain\Service\ModuleMaker.php">
+    <file name="C:\inetpub\apps\console\src\Console\Domain\Services\ModuleMaker.php">
       <metrics loc="16" ncloc="10" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <package name="Saci\Infrastructure\Domain\Service">
-      <file name="C:\inetpub\apps\console\src\Console\Infrastructure\Domain\Service\ModuleMaker.php">
-        <class name="Saci\Infrastructure\Domain\Service\ModuleMaker" namespace="Saci\Infrastructure\Domain\Service">
+    <package name="Saci\Console\Infrastructure\Domain\Services">
+      <file name="C:\inetpub\apps\console\src\Console\Infrastructure\Domain\Services\ModuleMaker.php">
+        <class name="Saci\Console\Infrastructure\Domain\Services\ModuleMaker" namespace="Saci\Console\Infrastructure\Domain\Services">
           <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
         </class>
         <line num="23" type="method" name="make" visibility="public" complexity="2" crap="2" count="3"/>

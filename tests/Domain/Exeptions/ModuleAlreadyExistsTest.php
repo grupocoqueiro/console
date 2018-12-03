@@ -9,7 +9,7 @@
 namespace Test\Domain\Exeptions;
 
 use PHPUnit\Framework\TestCase;
-use Saci\Domain\Exceptions\ModuleAlreadyExists;
+use Saci\Console\Domain\Exceptions\ModuleAlreadyExists;
 
 class ModuleAlreadyExistsTest extends TestCase
 {

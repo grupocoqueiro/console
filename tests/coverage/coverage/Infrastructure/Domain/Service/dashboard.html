@@ -225,7 +225,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Cyclomatic Complexity');
 
     d3.select('#classComplexity svg')
-      .datum(getComplexityData([[100,2,"<a href=\"ModuleMaker.php.html#16\">Saci\\Infrastructure\\Domain\\Service\\ModuleMaker<\/a>"]], 'Class Complexity'))
+      .datum(getComplexityData([[100,2,"<a href=\"ModuleMaker.php.html#16\">Saci\\Console\\Infrastructure\\Domain\\Services\\ModuleMaker<\/a>"]], 'Class Complexity'))
       .transition()
       .duration(500)
       .call(chart);
@@ -249,7 +249,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Method Complexity');
 
     d3.select('#methodComplexity svg')
-      .datum(getComplexityData([[100,2,"<a href=\"ModuleMaker.php.html#23\">Saci\\Infrastructure\\Domain\\Service\\ModuleMaker::make<\/a>"]], 'Method Complexity'))
+      .datum(getComplexityData([[100,2,"<a href=\"ModuleMaker.php.html#23\">Saci\\Console\\Infrastructure\\Domain\\Services\\ModuleMaker::make<\/a>"]], 'Method Complexity'))
       .transition()
       .duration(500)
       .call(chart);

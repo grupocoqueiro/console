@@ -11,7 +11,7 @@ namespace Test\Application\Commands;
 
 use PHPUnit\Framework\TestCase;
 use Saci\Console\Application\Commands\ModuleMakerCommand;
-use Saci\Infrastructure\Domain\Service\ModuleMaker;
+use Saci\Console\Infrastructure\Domain\Services\ModuleMaker;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

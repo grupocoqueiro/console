@@ -6,7 +6,7 @@
  * Time: 22:35
  */
 
-namespace Saci\Domain\Entity;
+namespace Saci\Console\Domain\Entity;
 
 /**
  * Class Module

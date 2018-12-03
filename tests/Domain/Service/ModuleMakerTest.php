@@ -10,9 +10,9 @@ namespace Test\Domain\Service;
 
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Saci\Domain\Entity\Module;
-use Saci\Domain\Exceptions\ModuleAlreadyExists;
-use Saci\Infrastructure\Domain\Service\ModuleMaker;
+use Saci\Console\Domain\Entity\Module;
+use Saci\Console\Domain\Exceptions\ModuleAlreadyExists;
+use Saci\Console\Infrastructure\Domain\Services\ModuleMaker;
 
 class ModuleMakerTest extends TestCase
 {
@@ -61,7 +61,7 @@ class ModuleMakerTest extends TestCase
 
     /**
      * @test
-     * @throws \Saci\Domain\Exceptions\ModuleAlreadyExists
+     * @throws \Saci\Console\Domain\Exceptions\ModuleAlreadyExists
      */
     public function verifica_se_e_possivel_criar_um_modulo()
     {
@@ -77,7 +77,7 @@ class ModuleMakerTest extends TestCase
         $this->mockModule
             ->method('getPathModule')
             ->willReturn(self::ROOT . self::DS . self::PROJECT_NAME);
-        /** @var Module $module */
+        /** @var \Saci\Console\Domain\Entity\Module $module */
         $module = $this->mockModule;
 
         (new ModuleMaker())->make($module);
@@ -92,7 +92,7 @@ class ModuleMakerTest extends TestCase
 
     /**
      * @test
-     * @throws \Saci\Domain\Exceptions\ModuleAlreadyExists
+     * @throws \Saci\Console\Domain\Exceptions\ModuleAlreadyExists
      */
     public function lanca_excecao_caso_o_modulo_ja_exista()
     {
