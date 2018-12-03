@@ -1,12 +1,12 @@
 
 
 Code Coverage Report:     
-  2018-12-03 15:48:58     
+  2018-12-03 18:46:49     
                           
  Summary:                 
-  Classes: 100.00% (5/5)  
-  Methods: 100.00% (11/11)
-  Lines:   100.00% (33/33)
+  Classes: 100.00% (8/8)  
+  Methods: 100.00% (15/15)
+  Lines:   100.00% (58/58)
 
 \Saci\Console\Application\Commands::Saci\Console\Application\Commands\ModuleMakerCommand
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 12/ 12)
@@ -14,7 +14,13 @@ Code Coverage Report:
   Methods: 100.00% ( 5/ 5)   Lines: 100.00% (  9/  9)
 \Saci\Console\Domain\Exceptions::Saci\Console\Domain\Exceptions\ModuleAlreadyExists
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  5/  5)
+\Saci\Console\Infrastructure\Domain\Services::Saci\Console\Infrastructure\Domain\Services\ClassMaker
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  5/  5)
 \Saci\Console\Infrastructure\Domain\Services::Saci\Console\Infrastructure\Domain\Services\ModuleMaker
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  6/  6)
 \Saci\Console\Infrastructure\Domain\Services::Saci\Console\Infrastructure\Domain\Services\ModuleMakerFactory
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
+\Saci\Console\Infrastructure\Domain\Services\PhpClass::Saci\Console\Infrastructure\Domain\Services\PhpClass\Mapping
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  8/  8)
+\Saci\Console\Infrastructure\Domain\Services\PhpClass::Saci\Console\Infrastructure\Domain\Services\PhpClass\ServiceProvider
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% ( 12/ 12)

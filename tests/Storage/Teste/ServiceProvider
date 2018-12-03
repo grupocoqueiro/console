@@ -1,0 +1,19 @@
+namespace Saci\Teste;
+
+use App\Model\Core\Container\ServiceProvider\ServiceProvider;
+
+/**
+ */
+class TesteServiceProvider extends ServiceProvider
+{
+    /**
+     * @var array
+     */
+    protected $provides = [];
+
+    /**
+     */
+    public function register()
+    {
+    }
+}

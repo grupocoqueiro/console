@@ -1,0 +1,17 @@
+namespace Saci\Teste;
+
+use GrupoCoqueiro\CommandBus\MappingInterface;
+
+/**
+ */
+class Mapping implements MappingInterface
+{
+    /**
+     * Retorna o mapeamento dos commands
+     *
+     * @return array
+     */
+    public function __invoke(): array
+    {
+    }
+}
