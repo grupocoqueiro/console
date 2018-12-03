@@ -64,7 +64,7 @@ class ModuleMakerCommandTest extends TestCase
 
         (new ModuleMaker())->remove('c:' . DIRECTORY_SEPARATOR . 'temp' . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'Teste');
 
-        $this->assertEquals("Modulo Teste foi criado\r\n", $commandTester->getDisplay());
+        $this->assertEquals("Modulo Teste foi criado", str_replace("\r\n", "", $commandTester->getDisplay()));
     }
 
 }
