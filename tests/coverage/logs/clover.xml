@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1543870009">
-  <project timestamp="1543870009">
+<coverage generated="1543928529">
+    <project timestamp="1543928529">
     <package name="Saci\Console\Application\Commands">
       <file name="C:\inetpub\apps\console\src\Console\Application\Commands\ModuleMakerCommand.php">
         <class name="Saci\Console\Application\Commands\ModuleMakerCommand" namespace="Saci\Console\Application\Commands">

@@ -6,7 +6,7 @@
  * Time: 15:30
  */
 
-namespace Test\Domain\Service;
+namespace Test\Infrastructure\Domain\Service;
 
 use PHPUnit\Framework\TestCase;
 use Saci\Console\Domain\Services\ModuleMaker;

@@ -9,17 +9,13 @@
 namespace Saci\Console\Infrastructure\Domain\Services;
 
 
-use cristianoc72\codegen\generator\CodeGenerator;
+use cristianoc72\codegen\model\GenerateableInterface;
 use Saci\Console\Domain\Entity\Module;
-use Saci\Console\Domain\Services\PhpClass;
 use Saci\Console\Domain\Services\ClassMaker as ClassMakerIterface;
+use Saci\Console\Domain\Services\PhpClass;
 
 class ClassMaker implements ClassMakerIterface
 {
-    /**
-     * @var CodeGenerator
-     */
-    private $codeGenerator;
     /**
      * @var Module
      */
@@ -28,22 +24,18 @@ class ClassMaker implements ClassMakerIterface
     /**
      * ClassMappingMaker constructor.
      * @param Module $module
-     * @param CodeGenerator $codeGenerator
      */
-    public function __construct(Module $module, CodeGenerator $codeGenerator)
+    public function __construct(Module $module)
     {
-        $this->codeGenerator = $codeGenerator;
         $this->module = $module;
     }
 
     /**
      * @param PhpClass $phpClass
-     * @return string
+     * @return GenerateableInterface
      */
-    public function generate(PhpClass $phpClass)
+    public function generate(PhpClass $phpClass): GenerateableInterface
     {
-        $code = $phpClass->make($this->module->getName());
-
-        return $this->codeGenerator->generate($code);
+        return $phpClass->make($this->module->getName());
     }
 }

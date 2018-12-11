@@ -9,7 +9,9 @@
 namespace Saci\Console\Domain\Services;
 
 
+use cristianoc72\codegen\model\GenerateableInterface;
+
 interface ClassMaker
 {
-    public function generate(PhpClass $phpClass);
+    public function generate(PhpClass $phpClass): GenerateableInterface;
 }

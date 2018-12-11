@@ -6,7 +6,7 @@
  * Time: 15:41
  */
 
-namespace Test\Domain\Service;
+namespace Test\Infrastructure\Domain\Service;
 
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
