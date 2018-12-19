@@ -68,7 +68,7 @@ PHPCLASS;
 
         $generateable = $test->make('Test');
 
-        $stringClass = $this->generatorClass->create($generateable);
+        $stringClass = $this->generatorClass->generate($generateable);
 
         $this->assertEquals($expected, $stringClass);
     }
@@ -101,7 +101,7 @@ PHPCLASS;
 
         $cm = new ClassMaker(new Module('Teste', 'c:\\temp'));
         $generateable = $cm->generate(new Mapping());
-        $stringClass = $this->generatorClass->create($generateable);
+        $stringClass = $this->generatorClass->generate($generateable);
 
         $this->assertEquals($expected, $stringClass);
     }
@@ -136,7 +136,7 @@ PHPCLASS;
 
         $cm = new ClassMaker(new Module('Teste', 'c:\\temp'));
         $generateable = $cm->generate(new ServiceProvider());
-        $stringClass = $this->generatorClass->create($generateable);
+        $stringClass = $this->generatorClass->generate($generateable);
 
         $this->assertEquals($expected, $stringClass);
     }

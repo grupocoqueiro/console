@@ -1,29 +1,37 @@
 
 
-Code Coverage Report:     
-  2018-12-11 12:00:37     
-                          
- Summary:                 
-  Classes: 100.00% (10/10)
-  Methods: 100.00% (18/18)
-  Lines:   100.00% (61/61)
+Code Coverage Report:    
+  2018-12-19 15:02:57    
+                         
+ Summary:                
+  Classes: 80.00% (12/15)
+  Methods: 88.24% (30/34)
+  Lines:   89.80% (88/98)
 
 \Saci\Console\Application\Commands::Saci\Console\Application\Commands\ModuleMakerCommand
-  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 12/ 12)
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 10/ 10)
 \Saci\Console\Domain\Entity::Saci\Console\Domain\Entity\Module
-  Methods: 100.00% ( 5/ 5)   Lines: 100.00% (  9/  9)
-\Saci\Console\Domain\Exceptions::Saci\Console\Domain\Exceptions\ModuleAlreadyExists
-  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  5/  5)
+  Methods: 100.00% ( 6/ 6)   Lines: 100.00% ( 13/ 13)
+\Saci\Console\Infrastructure\Application::Saci\Console\Infrastructure\Application\SymfonyEventAdapter
+  Methods:  66.67% ( 4/ 6)   Lines:  83.33% ( 10/ 12)
+\Saci\Console\Infrastructure\Domain\Events::Saci\Console\Infrastructure\Domain\Events\ModuleWasCreated
+  Methods: 100.00% ( 3/ 3)   Lines: 100.00% (  4/  4)
 \Saci\Console\Infrastructure\Domain\Services::Saci\Console\Infrastructure\Domain\Services\ClassMaker
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  3/  3)
+\Saci\Console\Infrastructure\Domain\Services::Saci\Console\Infrastructure\Domain\Services\ClassMappingMakerSubscriber
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  7/  7)
+\Saci\Console\Infrastructure\Domain\Services::Saci\Console\Infrastructure\Domain\Services\ClassServiceProviderMakerSubscriber
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  7/  7)
 \Saci\Console\Infrastructure\Domain\Services::Saci\Console\Infrastructure\Domain\Services\GeneratorClass
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  3/  3)
 \Saci\Console\Infrastructure\Domain\Services::Saci\Console\Infrastructure\Domain\Services\GeneratorClassFactory
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  2/  2)
 \Saci\Console\Infrastructure\Domain\Services::Saci\Console\Infrastructure\Domain\Services\ModuleMaker
-  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  6/  6)
+  Methods:  50.00% ( 1/ 2)   Lines:  83.33% (  5/  6)
 \Saci\Console\Infrastructure\Domain\Services::Saci\Console\Infrastructure\Domain\Services\ModuleMakerFactory
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
+\Saci\Console\Infrastructure\Domain\Services::Saci\Console\Infrastructure\Domain\Services\ModuleMakerSubscriber
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  3/  3)
 \Saci\Console\Infrastructure\Domain\Services\PhpClass::Saci\Console\Infrastructure\Domain\Services\PhpClass\Mapping
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  8/  8)
 \Saci\Console\Infrastructure\Domain\Services\PhpClass::Saci\Console\Infrastructure\Domain\Services\PhpClass\ServiceProvider

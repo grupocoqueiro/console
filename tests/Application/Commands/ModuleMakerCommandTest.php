@@ -11,11 +11,12 @@ namespace Test\Application\Commands;
 
 use PHPUnit\Framework\TestCase;
 use Saci\Console\Application\Commands\ModuleMakerCommand;
-use Saci\Console\Infrastructure\Domain\Services\ModuleMaker;
+use Saci\Console\Infrastructure\Application\SymfonyEventAdapter;
+use Saci\Console\Infrastructure\Domain\Services\ClassMappingMakerSubscriber;
+use Saci\Console\Infrastructure\Domain\Services\ClassServiceProviderMakerSubscriber;
+use Saci\Console\Infrastructure\Domain\Services\ModuleMakerSubscriber;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\Filesystem\Filesystem;
 
@@ -47,12 +48,16 @@ class ModuleMakerCommandTest extends TestCase
     /**
      * @test
      */
-    public function verifi_se_ao_executar_um_diretorio_do_modulo_e_criado()
+    public function verifics_se_ao_executar_um_diretorio_do_modulo_e_criado()
     {
         require_once __DIR__ . '/../../../vendor/autoload.php';
 
+        SymfonyEventAdapter::getInstance()->addSubscriber(new ModuleMakerSubscriber());
+        SymfonyEventAdapter::getInstance()->addSubscriber(new ClassMappingMakerSubscriber());
+        SymfonyEventAdapter::getInstance()->addSubscriber(new ClassServiceProviderMakerSubscriber());
+
         $app = new Application('Saci Console', 'v0.0.1');
-        $app->add(new ModuleMakerCommand());
+        $app->add($this->command);
 
         $command = $app->find('create:module');
 

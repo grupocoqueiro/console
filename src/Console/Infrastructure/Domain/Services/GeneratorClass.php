@@ -25,7 +25,7 @@ class GeneratorClass implements \Saci\Console\Domain\Services\GeneratorClass
         $this->generator = $generator;
     }
 
-    public function create(GenerateableInterface $generateable): string
+    public function generate(GenerateableInterface $generateable): string
     {
         return $this->generator->generate($generateable);
     }

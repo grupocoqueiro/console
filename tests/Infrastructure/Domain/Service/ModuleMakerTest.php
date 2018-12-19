@@ -22,9 +22,8 @@ class ModuleMakerTest extends TestCase
     const DS = DIRECTORY_SEPARATOR;
     const ROOT = 'c:' . self::DS . 'temp' . self::DS .'src';
     const APPLICATION = self::DS . 'Application';
-    const USE_CASE = self::APPLICATION . self::DS . 'UseCase';
-    const CONTROLLERS = self::USE_CASE . self::DS . 'Controllers';
-    const COMMANDS = self::USE_CASE . self::DS . 'Commands';
+    const USE_CASE = self::DS . 'UseCase';
+    const CONTROLLERS = self::APPLICATION . self::DS . 'Controllers';
     const DOMAIN = self::DS . 'Domain';
     const ENTITIES = self::DOMAIN . self::DS . 'Entities';
     const VO = self::DOMAIN . self::DS . 'ValueObjects';
@@ -39,7 +38,7 @@ class ModuleMakerTest extends TestCase
 
     private $paths = [
         self::ROOT . self::DS . self::PROJECT_NAME . self::DS . self::CONTROLLERS,
-        self::ROOT . self::DS . self::PROJECT_NAME . self::DS . self::COMMANDS,
+        self::ROOT . self::DS . self::PROJECT_NAME . self::DS . self::USE_CASE,
         self::ROOT . self::DS . self::PROJECT_NAME . self::DS . self::ENTITIES,
         self::ROOT . self::DS . self::PROJECT_NAME . self::DS . self::VO,
         self::ROOT . self::DS . self::PROJECT_NAME . self::DS . self::EVENTS,

@@ -8,6 +8,8 @@
 
 namespace Saci\Console\Domain\Entity;
 
+use Saci\Console\Infrastructure\Application\SymfonyEventAdapter;
+
 /**
  * Class Module
  * @package Saci\Domain\Entity
@@ -19,9 +21,8 @@ class Module
     const DS = DIRECTORY_SEPARATOR;
     const ROOT = 'src';
     const APPLICATION = self::DS . 'Application';
-    const USE_CASE = self::APPLICATION . self::DS . 'UseCase';
-    const CONTROLLERS = self::USE_CASE . self::DS . 'Controllers';
-    const COMMANDS = self::USE_CASE . self::DS . 'Commands';
+    const USE_CASE = self::DS . 'UseCase,';
+    const CONTROLLERS = self::APPLICATION . self::DS . 'Controllers';
     const DOMAIN = self::DS . 'Domain';
     const ENTITIES = self::DOMAIN . self::DS . 'Entities';
     const VO = self::DOMAIN . self::DS . 'ValueObjects';
@@ -38,7 +39,7 @@ class Module
 
     private $paths = [
         self::CONTROLLERS,
-        self::COMMANDS,
+        self::USE_CASE,
         self::ENTITIES,
         self::VO,
         self::EVENTS,
@@ -59,7 +60,21 @@ class Module
         foreach ($this->paths as &$path) {
             $path = $this->getDiretorio() . self::DS . self::ROOT . self::DS . $this->getName() . DIRECTORY_SEPARATOR . $path;
         }
+    }
 
+    /**
+     * @param string $name
+     * @param string $diretorio
+     * @return Module
+     */
+    public static function create(string $name, string $diretorio): Module
+    {
+        $module = new self($name, $diretorio);
+        SymfonyEventAdapter::getInstance()->publish(
+            new \Saci\Console\Infrastructure\Domain\Events\ModuleWasCreated($module)
+        );
+
+        return $module;
     }
 
     /**
@@ -69,7 +84,6 @@ class Module
     {
         return $this->name;
     }
-
 
 
     public function getPaths(): array

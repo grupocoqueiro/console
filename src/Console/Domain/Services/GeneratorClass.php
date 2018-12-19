@@ -16,5 +16,5 @@ interface GeneratorClass
 {
     public function __construct(CodeGenerator $generator);
 
-    public function create(GenerateableInterface $generateable): string;
+    public function generate(GenerateableInterface $generateable): string;
 }

@@ -25,7 +25,7 @@ class ModuleTest extends TestCase
     const DS = DIRECTORY_SEPARATOR;
     const ROOT = 'c:' . self::DS . 'temp' . self::DS .'src';
     const APPLICATION = self::DS . 'Application';
-    const USE_CASE = self::APPLICATION . self::DS . 'UseCase';
+    const USE_CASE = self::DS . 'UseCases';
     const CONTROLLERS = self::USE_CASE . self::DS . 'Controllers';
     const COMMANDS = self::USE_CASE . self::DS . 'Commands';
     const DOMAIN = self::DS . 'Domain';
@@ -56,7 +56,7 @@ class ModuleTest extends TestCase
 
     public function setUp()
     {
-        $this->module = new \Saci\Console\Domain\Entity\Module(self::PROJECT_NAME, 'c:' . self::DS . 'temp');
+        $this->module = new Module(self::PROJECT_NAME, 'c:' . self::DS . 'temp');
     }
 
     /**
@@ -65,7 +65,7 @@ class ModuleTest extends TestCase
     public function verifica_se_a_entidade_module_pode_ser_criada()
     {
 
-        $this->assertInstanceOf(\Saci\Console\Domain\Entity\Module::class, $this->module);
+        $this->assertInstanceOf(Module::class, $this->module);
     }
 
     /**
