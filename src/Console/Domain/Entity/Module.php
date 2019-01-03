@@ -21,7 +21,7 @@ class Module
     const DS = DIRECTORY_SEPARATOR;
     const ROOT = 'src';
     const APPLICATION = self::DS . 'Application';
-    const USE_CASE = self::DS . 'UseCase,';
+    const USE_CASE = self::DS . 'UseCases';
     const CONTROLLERS = self::APPLICATION . self::DS . 'Controllers';
     const DOMAIN = self::DS . 'Domain';
     const ENTITIES = self::DOMAIN . self::DS . 'Entities';

@@ -1,12 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
+  <testsuite name="C:\inetpub\apps\console\tests" tests="22" assertions="34" errors="0" failures="0" skipped="0"
+             time="0.378431">
     <testsuite name="Test\Application\Commands\ModuleMakerCommandTest"
-               file="C:\inetpub\apps\console\tests\Application\Commands\ModuleMakerCommandTest.php" tests="1"
-               assertions="1" errors="0" failures="0" skipped="0" time="57.511932">
-        <testcase name="verifics_se_ao_executar_um_diretorio_do_modulo_e_criado"
-                  class="Test\Application\Commands\ModuleMakerCommandTest"
-                  classname="Test.Application.Commands.ModuleMakerCommandTest"
-                  file="C:\inetpub\apps\console\tests\Application\Commands\ModuleMakerCommandTest.php" line="54"
-                  assertions="1" time="57.511932"/>
+               file="C:\inetpub\apps\console\tests\Application\Commands\ModuleMakerCommandTest.php" tests="2"
+               assertions="6" errors="0" failures="0" skipped="0" time="0.189917">
+      <testcase name="verifica_se_a_configuracao_para_o_comando_de_criacao_d0_modulo_esta_correta"
+                class="Test\Application\Commands\ModuleMakerCommandTest"
+                classname="Test.Application.Commands.ModuleMakerCommandTest"
+                file="C:\inetpub\apps\console\tests\Application\Commands\ModuleMakerCommandTest.php" line="36"
+                assertions="5" time="0.016940"/>
+      <testcase name="verifics_se_ao_executar_um_diretorio_do_modulo_e_criado"
+                class="Test\Application\Commands\ModuleMakerCommandTest"
+                classname="Test.Application.Commands.ModuleMakerCommandTest"
+                file="C:\inetpub\apps\console\tests\Application\Commands\ModuleMakerCommandTest.php" line="51"
+                assertions="1" time="0.172977"/>
+    </testsuite>
+    <testsuite name="Test\Domain\Entity\ModuleTest" file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php"
+               tests="5" assertions="5" errors="0" failures="0" skipped="0" time="0.009957">
+      <testcase name="verifica_se_a_entidade_module_pode_ser_criada" class="Test\Domain\Entity\ModuleTest"
+                classname="Test.Domain.Entity.ModuleTest"
+                file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php" line="65" assertions="1"
+                time="0.001944"/>
+      <testcase name="verifica_o_nome_retornado" class="Test\Domain\Entity\ModuleTest"
+                classname="Test.Domain.Entity.ModuleTest"
+                file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php" line="74" assertions="1"
+                time="0.001806"/>
+      <testcase name="verifica_o_diretorio_pode_ser_retornado" class="Test\Domain\Entity\ModuleTest"
+                classname="Test.Domain.Entity.ModuleTest"
+                file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php" line="82" assertions="1"
+                time="0.001824"/>
+      <testcase name="verifica_o_path_do_modulo_pode_ser_retornado" class="Test\Domain\Entity\ModuleTest"
+                classname="Test.Domain.Entity.ModuleTest"
+                file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php" line="90" assertions="1"
+                time="0.002465"/>
+      <testcase name="verifica_se_path_e_um_array_com_os_diretorios_corretos" class="Test\Domain\Entity\ModuleTest"
+                classname="Test.Domain.Entity.ModuleTest"
+                file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php" line="98" assertions="1"
+                time="0.001918"/>
+    </testsuite>
+    <testsuite name="Test\Domain\Exeptions\ModuleAlreadyExistsTest"
+               file="C:\inetpub\apps\console\tests\Domain\Exeptions\ModuleAlreadyExistsTest.php" tests="2"
+               assertions="2" errors="0" failures="0" skipped="0" time="0.005506">
+      <testcase name="verifica_se_a_classe_ModuleAlreadyExistsTest_pode_ser_criada"
+                class="Test\Domain\Exeptions\ModuleAlreadyExistsTest"
+                classname="Test.Domain.Exeptions.ModuleAlreadyExistsTest"
+                file="C:\inetpub\apps\console\tests\Domain\Exeptions\ModuleAlreadyExistsTest.php" line="20"
+                assertions="1" time="0.002845"/>
+      <testcase name="verifica_se_a_mensagem_pode_ser_obitida" class="Test\Domain\Exeptions\ModuleAlreadyExistsTest"
+                classname="Test.Domain.Exeptions.ModuleAlreadyExistsTest"
+                file="C:\inetpub\apps\console\tests\Domain\Exeptions\ModuleAlreadyExistsTest.php" line="28"
+                assertions="1" time="0.002661"/>
+    </testsuite>
+    <testsuite name="Test\Infrastructure\Domain\Service\ClassMakerTest"
+               file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\ClassMakerTest.php" tests="3"
+               assertions="3" errors="0" failures="0" skipped="0" time="0.010552">
+      <testcase name="verifica_se_foi_criado_uma_instancia_de_ClassMappingMaker"
+                class="Test\Infrastructure\Domain\Service\ClassMakerTest"
+                classname="Test.Infrastructure.Domain.Service.ClassMakerTest"
+                file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\ClassMakerTest.php" line="31"
+                assertions="1" time="0.002290"/>
+      <testcase name="verifica_se_e_possivel_criar_uma_intancia_de_PhpClass_a_partir_da_classe_Mapping"
+                class="Test\Infrastructure\Domain\Service\ClassMakerTest"
+                classname="Test.Infrastructure.Domain.Service.ClassMakerTest"
+                file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\ClassMakerTest.php" line="39"
+                assertions="1" time="0.003587"/>
+      <testcase name="verifica_se_e_possivel_criar_uma_intancia_de_PhpClass_a_partir_da_classe_ServiceProvider"
+                class="Test\Infrastructure\Domain\Service\ClassMakerTest"
+                classname="Test.Infrastructure.Domain.Service.ClassMakerTest"
+                file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\ClassMakerTest.php" line="68"
+                assertions="1" time="0.004675"/>
+    </testsuite>
+    <testsuite name="Test\Infrastructure\Domain\Service\GeneratorCalssTest"
+               file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\GeneratorCalssTest.php" tests="4"
+               assertions="4" errors="0" failures="0" skipped="0" time="0.055115">
+      <testcase name="verifica_se_e_possivel_criar_uma_intancia"
+                class="Test\Infrastructure\Domain\Service\GeneratorCalssTest"
+                classname="Test.Infrastructure.Domain.Service.GeneratorCalssTest"
+                file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\GeneratorCalssTest.php" line="40"
+                assertions="1" time="0.006033"/>
+      <testcase name="verifica_se_e_possivel_criar_uma_string_de_uma_classe"
+                class="Test\Infrastructure\Domain\Service\GeneratorCalssTest"
+                classname="Test.Infrastructure.Domain.Service.GeneratorCalssTest"
+                file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\GeneratorCalssTest.php" line="48"
+                assertions="1" time="0.009813"/>
+      <testcase name="verifica_se_e_possivel_criar_uma_string_de_uma_classe_Mapping"
+                class="Test\Infrastructure\Domain\Service\GeneratorCalssTest"
+                classname="Test.Infrastructure.Domain.Service.GeneratorCalssTest"
+                file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\GeneratorCalssTest.php" line="79"
+                assertions="1" time="0.018729"/>
+      <testcase name="verifica_se_e_possivel_criar_uma_string_de_uma_classe_ServiceProvider"
+                class="Test\Infrastructure\Domain\Service\GeneratorCalssTest"
+                classname="Test.Infrastructure.Domain.Service.GeneratorCalssTest"
+                file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\GeneratorCalssTest.php" line="112"
+                assertions="1" time="0.020540"/>
+    </testsuite>
+    <testsuite name="Test\Infrastructure\Domain\Service\GeneratorClassFactoryTest"
+               file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\GeneratorClassFactoryTest.php"
+               tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.006609">
+      <testcase name="verifica_se_e_possivel_criar_ima_intancia_de_GeneratorClass"
+                class="Test\Infrastructure\Domain\Service\GeneratorClassFactoryTest"
+                classname="Test.Infrastructure.Domain.Service.GeneratorClassFactoryTest"
+                file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\GeneratorClassFactoryTest.php"
+                line="20" assertions="1" time="0.006609"/>
+    </testsuite>
+    <testsuite name="Test\Infrastructure\Domain\Service\ModuleMakerFactoryTest"
+               file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\ModuleMakerFactoryTest.php" tests="1"
+               assertions="1" errors="0" failures="0" skipped="0" time="0.001804">
+      <testcase name="verifica_se_e_possivel_criar_uma_instancia_de_MoludeMaker"
+                class="Test\Infrastructure\Domain\Service\ModuleMakerFactoryTest"
+                classname="Test.Infrastructure.Domain.Service.ModuleMakerFactoryTest"
+                file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\ModuleMakerFactoryTest.php" line="21"
+                assertions="1" time="0.001804"/>
+    </testsuite>
+    <testsuite name="Test\Infrastructure\Domain\Service\ModuleMakerTest"
+               file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\ModuleMakerTest.php" tests="2"
+               assertions="10" errors="0" failures="0" skipped="0" time="0.090261">
+      <testcase name="verifica_se_e_possivel_criar_um_modulo" class="Test\Infrastructure\Domain\Service\ModuleMakerTest"
+                classname="Test.Infrastructure.Domain.Service.ModuleMakerTest"
+                file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\ModuleMakerTest.php" line="66"
+                assertions="8" time="0.053291"/>
+      <testcase name="lanca_excecao_caso_o_modulo_ja_exista" class="Test\Infrastructure\Domain\Service\ModuleMakerTest"
+                classname="Test.Infrastructure.Domain.Service.ModuleMakerTest"
+                file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\ModuleMakerTest.php" line="97"
+                assertions="2" time="0.036970"/>
+    </testsuite>
+    <testsuite name="Test\Infrastructure\Domain\Service\PhpClass\MappingTest"
+               file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\PhpClass\MappingTest.php" tests="1"
+               assertions="1" errors="0" failures="0" skipped="0" time="0.003331">
+      <testcase name="verifica_se_sera_retornado_uma_instancia_de_GenerateableInterface"
+                class="Test\Infrastructure\Domain\Service\PhpClass\MappingTest"
+                classname="Test.Infrastructure.Domain.Service.PhpClass.MappingTest"
+                file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\PhpClass\MappingTest.php" line="20"
+                assertions="1" time="0.003331"/>
+    </testsuite>
+    <testsuite name="Test\Infrastructure\Domain\Service\PhpClass\ServiceProviderTest"
+               file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\PhpClass\ServiceProviderTest.php"
+               tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.005379">
+      <testcase name="verifica_se_sera_retornado_uma_instancia_de_GenerateableInterface"
+                class="Test\Infrastructure\Domain\Service\PhpClass\ServiceProviderTest"
+                classname="Test.Infrastructure.Domain.Service.PhpClass.ServiceProviderTest"
+                file="C:\inetpub\apps\console\tests\Infrastructure\Domain\Service\PhpClass\ServiceProviderTest.php"
+                line="21" assertions="1" time="0.005379"/>
+    </testsuite>
   </testsuite>
 </testsuites>

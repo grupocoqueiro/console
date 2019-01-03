@@ -26,8 +26,8 @@ class ModuleTest extends TestCase
     const ROOT = 'c:' . self::DS . 'temp' . self::DS .'src';
     const APPLICATION = self::DS . 'Application';
     const USE_CASE = self::DS . 'UseCases';
-    const CONTROLLERS = self::USE_CASE . self::DS . 'Controllers';
-    const COMMANDS = self::USE_CASE . self::DS . 'Commands';
+    const CONTROLLERS = self::APPLICATION . self::DS . 'Controllers';
+    const COMMANDS = self::USE_CASE;
     const DOMAIN = self::DS . 'Domain';
     const ENTITIES = self::DOMAIN . self::DS . 'Entities';
     const VO = self::DOMAIN . self::DS . 'ValueObjects';
@@ -97,6 +97,7 @@ class ModuleTest extends TestCase
      */
     public function verifica_se_path_e_um_array_com_os_diretorios_corretos()
     {
-        $this->assertEquals($this->paths, $this->module->getPaths());
+        $paths = $this->module->getPaths();
+        $this->assertEquals($this->paths, $paths);
     }
 }
