@@ -2,29 +2,26 @@
 /**
  * Created by PhpStorm.
  * User: thales
- * Date: 24/11/2018
- * Time: 22:07
+ * Date: 14/01/2019
+ * Time: 19:10
  */
 
 namespace Saci\Console\Application\Commands;
 
 
-use Saci\Console\Domain\Entity\Module;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class ModuleMakerCommand extends Command
+class CommandHandlerMakerCommand extends Command
 {
-
-
     protected function configure()
     {
         $this->setName("create:module")
-            ->setDescription("Cria um modulo e suas pastas iniciais")
-            ->addArgument("modulo", InputArgument::REQUIRED, "Nome do modulo")
-            ->addArgument("diretorio", InputArgument::REQUIRED, "Local onde ser� criado o modulo");
+            ->setDescription("Cria as classe de Command e CommandHandler")
+            ->addArgument("command", InputArgument::REQUIRED, "Nome do Command Handler")
+            ->addArgument("diretorio", InputArgument::REQUIRED, "Local onde será criado o Command handler");
     }
 
     /**
@@ -34,11 +31,11 @@ class ModuleMakerCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $modulo = $input->getArgument("modulo");
-        $diretorio = $input->getArgument("diretorio");
+        $commandHandler = $input->getArgument("command");
+        //$diretorio = $input->getArgument("diretorio");
 
-        $module = Module::create($modulo, $diretorio);
 
-        $output->writeln("Modulo {$module->getName()} foi criado");
+
+        $output->writeln("Command Handler {$commandHandler} foi criado");
     }
 }
