@@ -11,6 +11,7 @@ namespace Test\Domain\Entity;
 
 use PHPUnit\Framework\TestCase;
 use Saci\Console\Domain\Entity\Command;
+use Saci\Console\Domain\Entity\Module;
 
 class CommandTest extends TestCase
 {
@@ -20,7 +21,10 @@ class CommandTest extends TestCase
 
     public function setUp()
     {
-       $this->command = new Command('Test', 'c:/temp');
+        $module = $this->createMock(Module::class);
+        $module->method('getDiretorio')->willReturn('c:/temp');
+        $module->method('getName')->willReturn('Test');
+        $this->command = new Command('Test', $module);
     }
 
     /**

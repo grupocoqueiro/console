@@ -9,6 +9,7 @@
 namespace Saci\Console\Application\Commands;
 
 
+use Saci\Console\Domain\Entity\Module;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -20,8 +21,9 @@ class CommandHandlerMakerCommand extends Command
     {
         $this->setName("create:module")
             ->setDescription("Cria as classe de Command e CommandHandler")
-            ->addArgument("command", InputArgument::REQUIRED, "Nome do Command Handler")
-            ->addArgument("diretorio", InputArgument::REQUIRED, "Local onde será criado o Command handler");
+            ->addArgument("nome", InputArgument::REQUIRED, "Nome do Command Handler")
+            ->addArgument("diretorio", InputArgument::REQUIRED, "Local onde será criado o Command handler")
+            ->addArgument("nomeModule", InputArgument::REQUIRED, "Nome do módulo");
     }
 
     /**
@@ -31,11 +33,13 @@ class CommandHandlerMakerCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $commandHandler = $input->getArgument("command");
-        //$diretorio = $input->getArgument("diretorio");
+        $nome = $input->getArgument("nome");
+        $diretorio = $input->getArgument("diretorio");
+        $moduleName = $input->getArgument("nomeModule");
 
+        $module = new Module($moduleName, $diretorio);
+        \Saci\Console\Domain\Entity\Command::create($nome, $module);
 
-
-        $output->writeln("Command Handler {$commandHandler} foi criado");
+        $output->writeln("Command Handler {$nome} foi criado");
     }
 }

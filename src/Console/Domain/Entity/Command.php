@@ -9,17 +9,36 @@
 namespace Saci\Console\Domain\Entity;
 
 
+use Saci\Console\Infrastructure\Application\SymfonyEventAdapter;
+use Saci\Console\Infrastructure\Domain\Events\CommandWasCreated;
+
 class Command
 {
     /** @var string */
     private $name;
-    /** @var string */
-    private $diretorio;
+    /**
+     * @var Module
+     */
+    private $module;
 
-    public function __construct(string $name, string $diretorio)
+    public function __construct(string $name, Module $module)
     {
         $this->name = $name;
-        $this->diretorio = $diretorio;
+        $this->module = $module;
+    }
+
+    /**
+     * @param string $name
+     * @param Module $module
+     * @return Command
+     */
+    public static function create(string $name, Module $module): Command
+    {
+        $command = new self($name, $module);
+        SymfonyEventAdapter::getInstance()->publish(
+            new CommandWasCreated($command)
+        );
+        return $command;
     }
 
     /**
@@ -35,7 +54,7 @@ class Command
      */
     public function getDiretorio(): string
     {
-        return $this->diretorio;
+        return $this->module->getDiretorio();
     }
 
     public function getClassNameCommand()
