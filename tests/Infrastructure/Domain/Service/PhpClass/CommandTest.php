@@ -20,6 +20,8 @@ class CommandTest extends TestCase
      */
     public function verifica_se_sera_retornado_uma_instancia_de_GenerateableInterface()
     {
-        $this->assertInstanceOf(GenerateableInterface::class, (new Command())->make('Teste'));
+        $command = (new Command())
+            ->setModuleName('Test');
+        $this->assertInstanceOf(GenerateableInterface::class, $command->make());
     }
 }

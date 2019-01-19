@@ -24,7 +24,7 @@ class ModuleMakerCommand extends Command
         $this->setName("create:module")
             ->setDescription("Cria um modulo e suas pastas iniciais")
             ->addArgument("modulo", InputArgument::REQUIRED, "Nome do modulo")
-            ->addArgument("diretorio", InputArgument::REQUIRED, "Local onde ser� criado o modulo");
+            ->addArgument("diretorio", InputArgument::REQUIRED, "Local onde será criado o modulo");
     }
 
     /**

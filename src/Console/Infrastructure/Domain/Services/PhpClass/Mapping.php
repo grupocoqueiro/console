@@ -10,17 +10,19 @@ namespace Saci\Console\Infrastructure\Domain\Services\PhpClass;
 
 
 use cristianoc72\codegen\model\GenerateableInterface;
-use cristianoc72\codegen\model\PhpClass;
 use cristianoc72\codegen\model\PhpMethod;
 use Saci\Console\Domain\Services\PhpClass as PhpClassInterface;
 
-class Mapping extends PhpClass implements PhpClassInterface
+class Mapping extends AbstractPhpClass implements PhpClassInterface
 {
 
-    public function make(string $moduleName): GenerateableInterface
+    public function make(): GenerateableInterface
     {
+        $moduleName = $this->getModuleName();
+        $className = $this->getClassName() ?: 'Mapping';
+
         $this
-            ->setQualifiedName("Saci\\{$moduleName}\\Mapping")
+            ->setQualifiedName("Saci\\{$moduleName}\\$className")
             ->setInterfaces(['MappingInterface'])
             ->setMethod(
                 PhpMethod::create('__invoke')

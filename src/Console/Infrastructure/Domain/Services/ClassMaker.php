@@ -36,6 +36,7 @@ class ClassMaker implements ClassMakerIterface
      */
     public function generate(PhpClass $phpClass): GenerateableInterface
     {
-        return $phpClass->make($this->module->getName());
+        $phpClass->setModuleName($this->module->getName());
+        return $phpClass->make();
     }
 }

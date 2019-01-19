@@ -10,22 +10,22 @@ namespace Saci\Console\Infrastructure\Domain\Services\PhpClass;
 
 
 use cristianoc72\codegen\model\GenerateableInterface;
-use cristianoc72\codegen\model\PhpClass;
 use cristianoc72\codegen\model\PhpMethod;
 use Saci\Console\Domain\Services\PhpClass as PhpClassInterface;
 
-class Command extends PhpClass implements PhpClassInterface
+class Command extends AbstractPhpClass implements PhpClassInterface
 {
 
-    public function make(string $moduleName): GenerateableInterface
+    public function make(): GenerateableInterface
     {
+        $moduleName = $this->getModuleName();
+        $className = $this->getClassName() ?: 'Mapping';
+
         $this
-            ->setQualifiedName("Saci\\{$moduleName}\\UseCase\\")
-            ->setInterfaces(['MappingInterface'])
+            ->setQualifiedName("Saci\\{$moduleName}\\UseCase\\{$className}")
             ->setMethod(
                 PhpMethod::create('__construct')
-            )
-            ->declareUse("Saci\\{$moduleName}\\UseCase\\");
+            );
 
         return $this;
     }

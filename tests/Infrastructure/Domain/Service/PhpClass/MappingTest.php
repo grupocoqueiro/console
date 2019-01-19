@@ -19,6 +19,8 @@ class MappingTest extends TestCase
      */
     public function verifica_se_sera_retornado_uma_instancia_de_GenerateableInterface()
     {
-        $this->assertInstanceOf(GenerateableInterface::class, (new Mapping())->make('Teste'));
+        $mapping = (new Mapping())
+            ->setModuleName('Test');
+        $this->assertInstanceOf(GenerateableInterface::class, $mapping->make());
     }
 }

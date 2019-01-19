@@ -13,5 +13,13 @@ use cristianoc72\codegen\model\GenerateableInterface;
 
 interface PhpClass
 {
-    public function make(string $moduleName): GenerateableInterface;
+    public function setModuleName(string $moduleName): PhpClass;
+
+    public function setClassName(string $className): PhpClass;
+
+    public function getModuleName(): string;
+
+    public function getClassName(): ?string;
+
+    public function make(): GenerateableInterface;
 }

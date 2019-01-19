@@ -19,7 +19,7 @@ class CommandHandlerMakerCommand extends Command
 {
     protected function configure()
     {
-        $this->setName("create:module")
+        $this->setName("create:command")
             ->setDescription("Cria as classe de Command e CommandHandler")
             ->addArgument("nome", InputArgument::REQUIRED, "Nome do Command Handler")
             ->addArgument("diretorio", InputArgument::REQUIRED, "Local onde será criado o Command handler")

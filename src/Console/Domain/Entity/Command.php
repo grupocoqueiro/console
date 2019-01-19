@@ -62,8 +62,21 @@ class Command
         return ucfirst(strtolower($this->getName())) . 'Command';
     }
 
+    public function getLocalFileCommand(): string
+    {
+        return $this->getDiretorio()
+            . DIRECTORY_SEPARATOR
+            . $this->getClassNameCommand()
+            . '.php';
+    }
+
     public function getClassNameCommandHandler()
     {
         return ucfirst(strtolower($this->getName())) . 'CommandHandler';
+    }
+
+    public function getModule(): Module
+    {
+        return $this->module;
     }
 }

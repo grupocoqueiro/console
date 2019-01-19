@@ -10,19 +10,21 @@ namespace Saci\Console\Infrastructure\Domain\Services\PhpClass;
 
 
 use cristianoc72\codegen\model\GenerateableInterface;
-use cristianoc72\codegen\model\PhpClass;
 use cristianoc72\codegen\model\PhpConstant;
 use cristianoc72\codegen\model\PhpMethod;
 use cristianoc72\codegen\model\PhpProperty;
 use Saci\Console\Domain\Services\PhpClass as PhpClassInterface;
 
-class ServiceProvider extends PhpClass implements PhpClassInterface
+class ServiceProvider extends AbstractPhpClass implements PhpClassInterface
 {
 
-    public function make(string $moduleName): GenerateableInterface
+    public function make(): GenerateableInterface
     {
+        $moduleName = $this->getModuleName();
+        $className = $this->getClassName() ?: 'ServiceProvider';
+
         $this
-            ->setQualifiedName("Saci\\{$moduleName}\\{$moduleName}ServiceProvider")
+            ->setQualifiedName("Saci\\{$moduleName}\\{$className}")
             ->declareUses(
                 'App\\Model\\Core\\Container\\ServiceProvider\\ServiceProvider'
             )
