@@ -103,4 +103,24 @@ class Module
     {
         return $this->diretorio;
     }
+
+    public function mappingExists(): bool
+    {
+        return $this->fileExistsInModule('Mapping');
+    }
+
+    private function fileExistsInModule(string $fileName): bool
+    {
+        return file_exists($this->getPathModule() . "$fileName.php");
+    }
+
+    public function getLocalMapping(): string
+    {
+        return $this->getLocalFile('Mapping');
+    }
+
+    private function getLocalFile(string $fileName): string
+    {
+        return $this->getPathModule() . "$fileName.php";
+    }
 }

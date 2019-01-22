@@ -48,7 +48,7 @@ class CommandTest extends TestCase
      */
     public function verifica_se_e_possivel_pegar_nome_do_diretorio_command()
     {
-        $this->assertEquals('c:/temp', $this->command->getDiretorio());
+        $this->assertEquals('c:\temp', $this->command->getDiretorio());
     }
 
     /**
@@ -83,4 +83,15 @@ class CommandTest extends TestCase
         $expected = 'c:' . DIRECTORY_SEPARATOR . 'temp' . DIRECTORY_SEPARATOR . 'TestCommand.php';
         $this->assertEquals($expected, $this->command->getLocalFileCommand());
     }
+
+    /**
+     * @test
+     */
+    public function verifica_se_e_possivel_retornar_o_nome_do_local_do_arquivo_da_command_handler()
+    {
+        $expected = 'c:' . DIRECTORY_SEPARATOR . 'temp' . DIRECTORY_SEPARATOR . 'TestCommandHandler.php';
+        $this->assertEquals($expected, $this->command->getLocalFileCommandHandler());
+    }
+
+
 }

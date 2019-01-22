@@ -79,4 +79,12 @@ class Command
     {
         return $this->module;
     }
+
+    public function getLocalFileCommandHandler()
+    {
+        return $this->getDiretorio()
+            . DIRECTORY_SEPARATOR
+            . $this->getClassNameCommandHandler()
+            . '.php';
+    }
 }

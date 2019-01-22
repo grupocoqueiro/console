@@ -3,6 +3,7 @@
 use Saci\Console\Application\Commands\CommandHandlerMakerCommand;
 use Saci\Console\Application\Commands\ModuleMakerCommand;
 use Saci\Console\Infrastructure\Application\SymfonyEventAdapter;
+use Saci\Console\Infrastructure\Domain\Services\AddingCommandInMappingSubscriber;
 use Saci\Console\Infrastructure\Domain\Services\ClassCommandHandlerMakerSubscriber;
 use Saci\Console\Infrastructure\Domain\Services\ClassCommandMakerSubscriber;
 use Saci\Console\Infrastructure\Domain\Services\ClassMappingMakerSubscriber;
@@ -21,6 +22,7 @@ SymfonyEventAdapter::getInstance()->addSubscriber(new ClassMappingMakerSubscribe
 SymfonyEventAdapter::getInstance()->addSubscriber(new ClassServiceProviderMakerSubscriber());
 SymfonyEventAdapter::getInstance()->addSubscriber(new ClassCommandMakerSubscriber());
 SymfonyEventAdapter::getInstance()->addSubscriber(new ClassCommandHandlerMakerSubscriber());
+SymfonyEventAdapter::getInstance()->addSubscriber(new AddingCommandInMappingSubscriber());
 
 $app = new Application('Saci Console', 'v0.0.1');
 $app->add(new ModuleMakerCommand());

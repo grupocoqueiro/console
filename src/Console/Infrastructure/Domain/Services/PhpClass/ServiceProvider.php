@@ -21,7 +21,7 @@ class ServiceProvider extends AbstractPhpClass implements PhpClassInterface
     public function make(): GenerateableInterface
     {
         $moduleName = $this->getModuleName();
-        $className = $this->getClassName() ?: 'ServiceProvider';
+        $className = $this->getClassName() ?: $moduleName . 'ServiceProvider';
 
         $this
             ->setQualifiedName("Saci\\{$moduleName}\\{$className}")

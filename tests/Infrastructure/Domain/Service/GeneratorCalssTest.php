@@ -10,11 +10,11 @@ namespace Test\Infrastructure\Domain\Service;
 
 use cristianoc72\codegen\generator\CodeGenerator;
 use cristianoc72\codegen\model\GenerateableInterface;
-use cristianoc72\codegen\model\PhpClass;
 use PHPUnit\Framework\TestCase;
 use Saci\Console\Domain\Entity\Module;
 use Saci\Console\Domain\Services\GeneratorClass;
 use Saci\Console\Infrastructure\Domain\Services\ClassMaker;
+use Saci\Console\Infrastructure\Domain\Services\PhpClass\AbstractPhpClass;
 use Saci\Console\Infrastructure\Domain\Services\PhpClass\Mapping;
 use Saci\Console\Infrastructure\Domain\Services\PhpClass\ServiceProvider;
 
@@ -47,13 +47,19 @@ class GeneratorCalssTest extends TestCase
      */
     public function verifica_se_e_possivel_criar_uma_string_de_uma_classe()
     {
-        $test = new class extends PhpClass implements \Saci\Console\Domain\Services\PhpClass
+        $test = new class extends AbstractPhpClass implements \Saci\Console\Domain\Services\PhpClass
         {
-            public function make(string $moduleName): GenerateableInterface
+            public function make(): GenerateableInterface
             {
-                return $this->setQualifiedName("Saci\\{$moduleName}\\Anything");
+                $moduleName = $this->getModuleName();
+                $classname = $this->getClassName();
+                return $this->setQualifiedName("Saci\\{$moduleName}\\{$classname}");
             }
         };
+
+        $test
+            ->setModuleName('Test')
+            ->setClassName('Anything');
 
         $expected = <<<PHPCLASS
 namespace Saci\Test;
@@ -66,7 +72,7 @@ class Anything
 
 PHPCLASS;
 
-        $generateable = $test->make('Test');
+        $generateable = $test->make();
 
         $stringClass = $this->generatorClass->generate($generateable);
 
