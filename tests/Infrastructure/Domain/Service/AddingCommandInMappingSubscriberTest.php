@@ -13,6 +13,10 @@ use Saci\Console\Domain\Entity\Command;
 use Saci\Console\Domain\Entity\Module;
 use Saci\Console\Domain\Events\CommandWasCreated;
 use Saci\Console\Infrastructure\Domain\Services\AddingCommandInMappingSubscriber;
+use Saci\Console\Infrastructure\Domain\Services\ClassMaker;
+use Saci\Console\Infrastructure\Domain\Services\GeneratorClassFactory;
+use Saci\Console\Infrastructure\Domain\Services\PhpClass\Mapping;
+use Symfony\Component\Filesystem\Filesystem;
 
 class AddingCommandInMappingSubscriberTest extends TestCase
 {
@@ -83,10 +87,24 @@ class AddingCommandInMappingSubscriberTest extends TestCase
 
         $this->assertTrue($result);
 
+        $this->mappingClear($module);
+
     }
 
     protected function setUp()
     {
         $this->subscriber = new AddingCommandInMappingSubscriber();
+    }
+
+    private function mappingClear(Module $module)
+    {
+        $classMaker = new ClassMaker($module);
+        $generateable = $classMaker->generate(new Mapping());
+        $stringClass = GeneratorClassFactory::create()->generate($generateable);
+
+        $stringClass = "<?php\n" . $stringClass;
+
+        (new Filesystem())->dumpFile($module->getPathModule() . DIRECTORY_SEPARATOR . 'Mapping.php', $stringClass);
+
     }
 }

@@ -32,6 +32,10 @@ class AddingCommandInMappingSubscriber implements ClassCommandHandlerMakerSubscr
      */
     public function create(CommandWasCreated $commandWasCreated)
     {
+        $moduleName = $commandWasCreated->getCommand()->getModule()->getName();
+        $commandName = $commandWasCreated->getCommand()->getClassNameCommand();
+        $commandHandlerName = $commandWasCreated->getCommand()->getClassNameCommandHandler();
+
         if (!$commandWasCreated->getCommand()->getModule()->mappingExists()) {
             throw new MappingNotFoundException('O arquivo Mapping não foi encontrado! Crie primeiro o arquivo Mapping.php para depois criar os Commands!');
         }
@@ -43,6 +47,11 @@ class AddingCommandInMappingSubscriber implements ClassCommandHandlerMakerSubscr
         $body = $this->createBody($method->getBody(), $commandWasCreated->getCommand());
 
         $method->setBody($body);
+
+        $class->declareUses(
+            "Saci\\{$moduleName}\\UseCase\\{$commandName}",
+            "Saci\\{$moduleName}\\UseCase\\{$commandHandlerName}"
+        );
 
         $generator = GeneratorClassFactory::create();
         $stringClass = $generator->generate($class);
