@@ -48,7 +48,7 @@ class CommandTest extends TestCase
      */
     public function verifica_se_e_possivel_pegar_nome_do_diretorio_command()
     {
-        $this->assertEquals('c:\temp', $this->command->getDiretorio());
+        $this->assertEquals('c:' . DIRECTORY_SEPARATOR . 'temp', $this->command->getDiretorio());
     }
 
     /**
