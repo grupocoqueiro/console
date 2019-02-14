@@ -1,31 +1,32 @@
 {
-    "name": "grupocoqueiro/console",
-    "description": "comandos para criar aplicações do grupo coqueiro",
-    "type": "library",
-    "require": {
-        "symfony/console": "^4.1",
-        "cristianoc72/psr2-code-generator": "^1.0",
-      "symfony/filesystem": "^4.1",
-      "symfony/event-dispatcher": "^4.2"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^7.1"
-    },
-    "autoload": {
-        "psr-4": {
-            "Saci\\": "./src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Test\\": "./tests"
-        }
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Thales Martins",
-            "email": "thalesmartins@grupocoqueiro.com"
-        }
-    ]
+  "name": "grupocoqueiro/console",
+  "description": "comandos para criar aplicações do grupo coqueiro",
+  "type": "library",
+  "require": {
+    "symfony/console": "^4.1",
+    "cristianoc72/psr2-code-generator": "^1.0",
+    "symfony/filesystem": "^4.1",
+    "symfony/event-dispatcher": "^4.2",
+    "grupocoqueiro/command-bus": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Saci\\": "./src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Test\\": "./tests"
+    }
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thales Martins",
+      "email": "thalesmartins@grupocoqueiro.com"
+    }
+  ]
 }
