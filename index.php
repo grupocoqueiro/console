@@ -15,7 +15,12 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 require_once 'constans.php';
-require_once __DIR__ . '/vendor/autoload.php';
+
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
+} else {
+    require_once __DIR__ . '/../../autoload.php';
+}
 
 SymfonyEventAdapter::getInstance()->addSubscriber(new ModuleMakerSubscriber());
 SymfonyEventAdapter::getInstance()->addSubscriber(new ClassMappingMakerSubscriber());
