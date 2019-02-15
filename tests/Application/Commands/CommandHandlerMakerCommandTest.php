@@ -64,8 +64,8 @@ class CommandHandlerMakerCommandTest extends TestCase
         $commandTester->execute([
             'command' => $command->getName(),
             'nome' => 'Test',
-            'diretorio' => 'c:' . DIRECTORY_SEPARATOR . 'temp',
-            'nomeModule' => 'Test'
+            'diretorio' => 'c:\\temp\\src\\Teste\\UseCases',
+            'nomeModule' => 'Teste'
         ]);
 
         (new Filesystem())->remove('c:' . DIRECTORY_SEPARATOR . 'temp' . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'Teste');

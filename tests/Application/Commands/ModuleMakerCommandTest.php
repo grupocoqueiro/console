@@ -48,8 +48,9 @@ class ModuleMakerCommandTest extends TestCase
     /**
      * @test
      */
-    public function verifics_se_ao_executar_um_diretorio_do_modulo_e_criado()
+    public function verifics_se_ao_executar_um_command_handler_e_criado()
     {
+
         require_once __DIR__ . '/../../../vendor/autoload.php';
 
         SymfonyEventAdapter::getInstance()->addSubscriber(new ModuleMakerSubscriber());

@@ -58,7 +58,7 @@ class AddingCommandInMappingSubscriber implements ClassCommandHandlerMakerSubscr
 
         $stringClass = "<?php\n" . $stringClass;
 
-        (new Filesystem())->dumpFile($commandWasCreated->getCommand()->getModule()->getPathModule() . DIRECTORY_SEPARATOR . 'Mapping.php', $stringClass);
+        (new Filesystem())->dumpFile($commandWasCreated->getCommand()->getModule()->getLocalMapping(), $stringClass);
 
         return true;
     }
@@ -70,11 +70,11 @@ class AddingCommandInMappingSubscriber implements ClassCommandHandlerMakerSubscr
 
         $string = '';
         foreach ($bodyArray as $key => $value) {
-            if ($key > 0) {
+            if ($key > 0 && !$value) {
                 $string .= "\n\t";
             }
 
-            $string .= "$value,";
+            $string .= $value ? "$value," : "";
         }
 
         return $body = <<<BODY

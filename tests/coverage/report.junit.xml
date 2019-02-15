@@ -1,26 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-    <testsuite name="Test\Domain\Entity\ModuleTest" file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php"
-               tests="5" assertions="5" errors="0" failures="0" skipped="0" time="0.277935">
-        <testcase name="verifica_se_a_entidade_module_pode_ser_criada" class="Test\Domain\Entity\ModuleTest"
-                  classname="Test.Domain.Entity.ModuleTest"
-                  file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php" line="65" assertions="1"
-                  time="0.226560"/>
-        <testcase name="verifica_o_nome_retornado" class="Test\Domain\Entity\ModuleTest"
-                  classname="Test.Domain.Entity.ModuleTest"
-                  file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php" line="74" assertions="1"
-                  time="0.040597"/>
-        <testcase name="verifica_o_diretorio_pode_ser_retornado" class="Test\Domain\Entity\ModuleTest"
-                  classname="Test.Domain.Entity.ModuleTest"
-                  file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php" line="82" assertions="1"
-                  time="0.002935"/>
-        <testcase name="verifica_o_path_do_modulo_pode_ser_retornado" class="Test\Domain\Entity\ModuleTest"
-                  classname="Test.Domain.Entity.ModuleTest"
-                  file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php" line="90" assertions="1"
-                  time="0.003750"/>
-        <testcase name="verifica_se_path_e_um_array_com_os_diretorios_corretos" class="Test\Domain\Entity\ModuleTest"
-                  classname="Test.Domain.Entity.ModuleTest"
-                  file="C:\inetpub\apps\console\tests\Domain\Entity\ModuleTest.php" line="98" assertions="1"
-                  time="0.004093"/>
+    <testsuite name="Test\Application\Commands\CommandHandlerMakerCommandTest"
+               file="C:\inetpub\apps\console\tests\Application\Commands\CommandHandlerMakerCommandTest.php" tests="1"
+               assertions="1" errors="0" failures="0" skipped="0" time="24.603987">
+        <testcase name="verifics_se_ao_executar_um_diretorio_do_modulo_e_criado"
+                  class="Test\Application\Commands\CommandHandlerMakerCommandTest"
+                  classname="Test.Application.Commands.CommandHandlerMakerCommandTest"
+                  file="C:\inetpub\apps\console\tests\Application\Commands\CommandHandlerMakerCommandTest.php" line="51"
+                  assertions="1" time="24.603987"/>
   </testsuite>
 </testsuites>

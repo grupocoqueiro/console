@@ -93,7 +93,12 @@ class Module
 
     public function getPathModule()
     {
-        return substr($this->getDiretorio(), strpos($this->getDiretorio(), self::ROOT)) . self::DS . self::ROOT . self::DS . $this->getName();
+        $path = $this->getDiretorio();
+        if (strpos($this->getDiretorio(), self::DS . self::ROOT)) {
+            $path = substr($this->getDiretorio(), 0, strpos($this->getDiretorio(), self::DS . self::ROOT));
+        }
+
+        return $path . self::DS . self::ROOT . self::DS . $this->getName();
     }
 
     /**
@@ -111,7 +116,8 @@ class Module
 
     private function fileExistsInModule(string $fileName): bool
     {
-        return file_exists($this->getPathModule() . "$fileName.php");
+
+        return file_exists($this->getLocalFile($fileName));
     }
 
     public function getLocalMapping(): string
@@ -121,6 +127,6 @@ class Module
 
     private function getLocalFile(string $fileName): string
     {
-        return $this->getPathModule() . "$fileName.php";
+        return $this->getPathModule() . self::DS . "$fileName.php";
     }
 }

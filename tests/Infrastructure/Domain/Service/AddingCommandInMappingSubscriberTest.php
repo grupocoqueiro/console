@@ -36,29 +36,10 @@ class AddingCommandInMappingSubscriberTest extends TestCase
      */
     public function testCreate()
     {
-        $this->markTestSkipped("Não funcionará pois o modulo não existe!");
+        $this->markTestSkipped('não funcionara ainda!');
 
         $commandWasCreated = $this->createMock(CommandWasCreated::class);
-        $module = $this->createMock(Module::class);
-        $module
-            ->method('getName')
-            ->willReturn('Compras');
-
-        $module
-            ->method('getDiretorio')
-            ->willReturn('c:\\temp');
-
-        $module
-            ->method('mappingExists')
-            ->willReturn(true);
-
-        $module
-            ->method('getLocalMapping')
-            ->willReturn('c:\\temp\src\\Compras\\Mapping.php');
-
-        $module
-            ->method('getPathModule')
-            ->willReturn('c:\\temp\src\\Compras\\');
+        $module = new Module('Teste', 'c:\\temp\\src\\Teste\\UseCases'); // $this->createMock(Module::class);
 
         $command = $this->createMock(Command::class);
         $command
@@ -75,7 +56,7 @@ class AddingCommandInMappingSubscriberTest extends TestCase
 
         $command
             ->method('getName')
-            ->willReturn('Teste');
+            ->willReturn('Test');
 
         $command
             ->method('getLocalFileCommandHandler')
