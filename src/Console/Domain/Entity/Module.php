@@ -93,7 +93,7 @@ class Module
 
     public function getPathModule()
     {
-        return $this->getDiretorio() . self::DS . self::ROOT . self::DS . $this->getName();
+        return substr($this->getDiretorio(), strpos($this->getDiretorio(), self::ROOT)) . self::DS . self::ROOT . self::DS . $this->getName();
     }
 
     /**
